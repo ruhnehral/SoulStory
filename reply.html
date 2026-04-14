@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoulStory</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+</head>
+
+<body class="overflow-hidden font-[Poppins]">
+    <section class="fixed bg-white w-full z-30 pb-5 lg:hidden">
+        <img src="/dist/img/logo_fix.svg" class=" w-40 mt-5 ml-5" alt="">
+        <button id="hamburger" name="hamburger" type="button" class="scale-75 lg:hidden block absolute right-5 top-5">
+            <span class="hamburger-line transition duration-300 ease-in-out origin-top-left rotate-45;"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+        </button>
+    </section>
+    <div class="flex flex-no-wrap h-full">
+        <aside style="min-height: 716px" id="sidebar"
+        class="w-64 fixed hidden bg-white shadow h-full sm:flex flex-col justify-between z-40">
+            <div class="px-8 flex flex-col h-full justify-between">
+            <!-- Bagian Atas -->
+            <div>
+                <div class="h-16 w-full flex items-center mt-9">
+                <img src="./dist/img/logo_fix.svg" class="w-[156px]" alt="Logo">
+                </div>
+        
+                <!-- Pilihan Fitur -->
+                <ul class="mt-14">
+                <p class="font-semibold mb-5 uppercase tracking-widest text-xs text-gray-400">Features</p>
+                <a href="./input_mood.html"
+                    class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+                    <i data-feather="bar-chart" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+                    <span class="text-sm ml-2">Mood Tracker</span>
+                </a>
+                <a href="./forum.html"
+                    class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+                    <i data-feather="message-circle" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+                    <span class="text-sm ml-2">Forums</span>
+                </a>
+                </ul>
+            </div>
+        
+            <!-- Bagian Bawah (Pengaturan) -->
+            <div>
+                <p class="font-semibold mb-5 mt-7 uppercase tracking-widest text-xs text-gray-400">HELP</p>
+                <a href="akun.html"
+                class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+                <i data-feather="settings" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+                <span class="text-sm ml-2">Settings</span>
+                </a>
+                <a href="./index.html" target="_blank"
+                class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+                <i data-feather="log-out" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+                <span class="text-sm ml-2">Log out</span>
+                </a>
+            </div>
+        
+            </div>
+        </aside>
+        
+        <div class="container justify-center py-0 lg:ml-64 mx-4 overflow-x-hidden">
+            <div class="w-full self-center justify-center rounded overflow-x-hidden">
+                <section class="pt-32 pb-20">
+                    <div class="container  overflow-x-hidden px-12">
+                        <div class="flex flex-wrap ">
+                            <h1 class="lg:text-5xl text-lg font-semibold">Tutorial Cara Ber-Meditasi Di Rumah</h1>
+                        </div>
+                        <div class="inline-flex">
+                            <a href="./forum.html" class="text-primary underline mt-3">Back to forums</a>
+                        </div>
+                        <div class="bg-white shadow-xl rounded-lg px-4 pb-5 border mt-7 ">
+                            <div class="flex w-full lg:px-4 mt-5 pe-4 ps-0 ">
+                                <img src="./dist/img/her.png" alt="profile" class="rounded-full w-10 h-10 border border-primary">
+                                <h1 class="text-base mx-4 me-2 self-center font-medium">Era Syifa</h1>
+                                <p class="text-xs self-center text-white"> <span class="bg-primary px-3 py-2 text-xs rounded-full mr-">Author</span></p>
+                                <div class="flex-end inline-flex ml-auto mb-4">
+                                    <p class="self-center px-3 text-xs lg:flex hidden"><i data-feather="paperclip" class="w-5 h-5 text-primary align-middle self-center my-auto mx-auto inline-flex"></i><span class="ms-2 text-gray-500"> Daily Posts #24</span></p>
+                                    <p class="text-xs ps-3 text-gray-500 self-center">11.24 AM</p>
+                                    <button><i data-feather="more-vertical"></i></button>
+                                </div>
+                            </div>
+                            <div class="flex w-full flex-wrap px-4 mt-7">
+                                <div class="ps-6">
+                                    <p class="ps-6 text-sm text-gray-500 lg:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis deserunt alias incidunt, sit tenetur ratione eveniet quaerat obcaecati aut dolores nihil nulla ad, aliquid doloremque? Perferendis vero consequatur in error.</p>
+                                <br>
+                                <p class="ps-6 text-sm text-gray-500 lg:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eaque nihil, labore quis officiis, illo, voluptatem quaerat amet aliquid tenetur sunt maiores cupiditate id. Sunt.</p>
+                                </div>
+                                <div class="inline-flex ml-auto mt-5">
+                                    <button type="button"><i data-feather="message-circle" class="w-5 h-5 text-gray-500"></i></button>
+                                    <button type="button"><i data-feather="send" class="w-5 h-5 ms-3 text-gray-500"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex mt-5 px-12">
+                        <h1 class="font-semibold">Comments (13)</h1>
+                    </div>
+                    <div class="px-12">
+                        <div class="bg-white shadow-xl rounded-lg mx-4 pb-5 border mt-7">
+                            <div class="container mx-auto mt-8 px-6 ">
+                            <div class="flex w-full lg:px-4 mt-5 pe-4 ps-0">
+                                <img src="./dist/img/her.png" alt="profile" class="rounded-full w-10 h-10 border border-primary">
+                                <h1 class="text-base mx-4 me-2 self-center font-medium">Era Syifa</h1>
+                                <p class="text-xs self-center text-white"> <span class="bg-primary px-3 py-2 text-xs rounded-full mr-2">Author</span></p>
+                                <div class="flex-end inline-flex ml-auto">
+                                    <p class="self-center px-3 text-xs lg:flex hidden"><i data-feather="paperclip" class="w-5 h-5 text-primary align-middle self-center my-auto mx-auto inline-flex"></i><span class="ms-2 text-gray-500"> Daily Posts #24</span></p>
+                                    <p class="text-xs ps-3 text-gray-500 self-center">11.24 AM</p>
+                                    <button><i data-feather="more-vertical"></i></button>
+                                </div>
+                            </div>
+                            <div class="w-full mt-4 ps-6">
+                                <p class="text-sm text-gray-500 lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis deserunt alias incidunt, sit tenetur ratione eveniet quaerat obcaecati aut dolores nihil nulla ad, aliquid doloremque? Perferendis vero consequatur in error.</p>
+                            </div>
+                            </div>
+                            <div class="container mt-8 px-8" style="padding-right: 12px; padding-left:  50px;">
+                                <div class="flex w-full lg:px-4 mt-5 pe-4 ps-0 flex-shrink">
+                                    <img src="./dist/img/her.png" alt="profile" class="rounded-full w-10    h-10 border border-primary">
+                                    <h1 class="text-base mx-4 me-2 self-center font-medium">Ruhnehral    Mikail</h1>
+                                    <div class="flex-end inline-flex ml-auto">
+                                        <p class="self-center px-3 text-xs lg:flex hidden"><i   data-feather="paperclip" class="w-5 h-5 text-primary align-middle     self-center my-auto mx-auto inline-flex"></i><span class="ms-2  text-gray-500"> Daily Posts #24</span></p>
+                                        <p class="text-xs ps-3 text-gray-500 self-center">11.24 AM</p>
+                                        <button><i data-feather="more-vertical"></i></button>
+                                    </div>
+                                </div>
+                                <div class="w-full mt-4 ps-6">
+                                    <p class="text-sm text-gray-500 lg:text-sm">Lorem ipsum dolor sit   amet consectetur adipisicing elit. Quis deserunt alias incidunt, sit  tenetur ratione eveniet quaerat obcaecati aut dolores nihil nulla ad,    aliquid doloremque? Perferendis vero consequatur in error.</p>
+                                </div>
+                        </div>
+                            <div class="container mt-8 px-8" style="padding-right: 12px; padding-left:  50px;">
+                                <div class="flex w-full lg:px-4 mt-5 pe-4 ps-0 flex-shrink">
+                                    <img src="./dist/img/her.png" alt="profile" class="rounded-full w-10    h-10 border border-primary">
+                                    <h1 class="text-base mx-4 me-2 self-center font-medium">Abika </h1>
+                                    <div class="flex-end inline-flex ml-auto">
+                                        <p class="self-center px-3 text-xs lg:flex hidden"><i   data-feather="paperclip" class="w-5 h-5 text-primary align-middle     self-center my-auto mx-auto inline-flex"></i><span class="ms-2  text-gray-500"> Daily Posts #24</span></p>
+                                        <p class="text-xs ps-3 text-gray-500 self-center">11.24 AM</p>
+                                        <button><i data-feather="more-vertical"></i></button>
+                                    </div>
+                                </div>
+                                <div class="w-full mt-4 ps-6">
+                                    <p class="text-sm text-gray-500 lg:text-sm">Lorem ipsum dolor sit   amet consectetur adipisicing elit. Quis deserunt alias incidunt, sit  tenetur ratione eveniet quaerat obcaecati aut dolores nihil nulla ad,    aliquid doloremque? Perferendis vero consequatur in error.</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./dist/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        feather.replace();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburgerButton = document.getElementById("hamburger");
+            const sidebar = document.getElementById("sidebar");
+
+            hamburgerButton.addEventListener("click", function () {
+                if (sidebar.style.display === "none" || sidebar.style.display === "") {
+                    sidebar.style.display = "block";
+                } else {
+                    sidebar.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

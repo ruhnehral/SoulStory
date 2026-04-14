@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .active-tab {
+            color: #6366f1;
+            border-bottom: 2px solid #6366f1;
+        }
+    </style>
+</head>
+
+<body class="overflow-hidden font-[Poppins]">
+    <img src="/dist/img/logo_fix.svg" class="w-40 absolute top-5 left-5" alt="">
+    <button id="hamburger" name="hamburger" type="button" class="scale-75 lg:hidden block absolute right-4 top-5">
+      <span class="hamburger-line transition duration-300 ease-in-out origin-top-left rotate-45;"></span>
+      <span class="hamburger-line transition duration-300 ease-in-out"></span>
+      <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+    </button>
+    <div class="flex flex-no-wrap h-screen overflow-x-hidden">
+      <aside 
+        id="sidebar"
+        class="w-64 fixed hidden bg-white shadow h-screen lg:flex flex-col justify-between z-40"
+      >
+        <div class="px-8 flex flex-col h-full justify-between">
+          <!-- Bagian Atas -->
+          <div>
+            <div class="h-16 w-full flex items-center mt-5">
+              <img src="./dist/img/logo_fix.svg" class="w-[156px]" alt="Logo">
+            </div>
+      
+            <!-- Pilihan Fitur -->
+            <ul class="mt-14">
+              <p class="font-semibold mb-5 uppercase tracking-widest text-xs text-gray-400">Features</p>
+              <a href="./input_mood.html"
+                class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+                <i data-feather="bar-chart" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+                <span class="text-sm ml-2">Mood Tracker</span>
+              </a>
+              <a href="./forum.html"
+                class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+                <i data-feather="message-circle" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+                <span class="text-sm ml-2">Forums</span>
+              </a>
+            </ul>
+          </div>
+      
+          <!-- Bagian Bawah (Pengaturan) -->
+          <div>
+            <p class="font-semibold mb-5 mt-7 uppercase tracking-widest text-xs text-gray-400">HELP</p>
+            <a href="akun.html"
+              class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+              <i data-feather="settings" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+              <span class="text-sm ml-2">Settings</span>
+            </a>
+            <a href="./index.html" target="_blank"
+              class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+              <i data-feather="log-out" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+              <span class="text-sm ml-2">Log out</span>
+            </a>
+          </div>
+      
+        </div>
+      </aside>
+
+      <div class="container justify-center mx-auto mt-28 py-0 lg:ml-64 px-6 overflow-x-hidden">
+          <h1 class="text-2xl font-bold text-gray-800">My Account</h1>
+
+          <!-- Profile Section -->
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-8 mt-6">
+              <!-- Banner and Profile Picture -->
+              <div class="relative">
+                  <div class="h-28 bg-indigo-500"></div>
+                  <div class="absolute -bottom-12 left-8 p-1 bg-white rounded-full">
+                      <div class="rounded-full bg-indigo-500 p-1 w-24 h-24 flex items-center justify-center">
+                          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/discord.svg" class="w-16 h-16 text-white" alt="Discord Logo">
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Profile Info -->
+              <div class="pt-16 px-8 pb-8">
+                  <div class="flex justify-between items-center mb-8">
+                      <h2 class="text-xl font-semibold">Ruhnehral</h2>
+                      <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md">
+                          Edit User Profile
+                      </button>
+                  </div>
+
+                  <!-- Profile Fields -->
+                  <div class="space-y-6">
+                      <!-- Display Name -->
+                      <div class="flex justify-between items-center">
+                          <div>
+                              <h3 class="text-base font-medium text-gray-700">Display Name</h3>
+                              <p id="displayName" class="text-base text-gray-900">Ruhnehral</p>
+                          </div>
+                          <button
+                            onclick="openModal('displayName', this)"
+                            data-field="Display Name"
+                            class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md text-sm">
+                              Edit
+                          </button>
+                      </div>
+
+                      <!-- Username -->
+                      <div class="flex justify-between items-center">
+                          <div>
+                              <h3 class="text-base font-medium text-gray-700">Username</h3>
+                              <p id="userName" class="text-base text-gray-900">ruhnehral</p>
+                          </div>
+                          <button 
+                            onclick="openModal('userName', this)"
+                            data-field="User Name"
+                            class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md text-sm">
+                              Edit
+                          </button>
+                      </div>
+
+                      <!-- Email -->
+                      <div class="flex justify-between items-start flex-wrap gap-4">
+                        <div class="min-w-0">
+                          <h3 class="text-base font-medium text-gray-700">Email</h3>
+                          <p id="email" class="text-base text-gray-900 break-words">****@gmail.com</p>
+                        </div>
+                        <button 
+                          onclick="openModal('email', this)"
+                          data-field="Email" 
+                          class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md text-sm">
+                          Edit
+                        </button>
+                      </div>
+
+                      <!-- Phone Number -->
+                      <div class="flex justify-between items-center">
+                          <div>
+                              <h3 class="text-base font-medium text-gray-700">Phone Number</h3>
+                              <p id="phoneNumber" class="text-base text-gray-900">You haven't added a phone number yet.</p>
+                          </div>
+                          <button 
+                            onclick="openModal('phoneNumber', this)"
+                            data-field="Phone Number"
+                            class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md text-sm">
+                              Add
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Pop up edit -->
+          <!-- Modal -->
+          <div id="popupModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded shadow-lg w-full max-w-md">
+              <h2 id="modalTitle" class="text-lg font-semibold mb-4">Edit Profile Field</h2>
+              <input id="popupInput" type="text" class="w-full border border-gray-300 px-4 py-2 rounded mb-4" />
+              <div class="flex justify-end gap-2">
+                <button onclick="closeModal()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancel</button>
+                <button onclick="saveChanges()" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Save</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Password Section -->
+          <div class="mb-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Password</h2>
+            <button 
+              onclick="openPasswordModal()" 
+              class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-md">
+              Change Password
+            </button>
+          </div>      
+          
+          <!-- Password Modal -->
+          <div id="passwordModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded shadow-lg w-full max-w-md">
+              <h2 class="text-lg font-semibold mb-4">Change Password</h2>
+              
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Latest Password</label>
+                <input type="password" id="latestPassword" class="w-full border border-gray-300 px-4 py-2 rounded" />
+              </div>
+              
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">New Password</label>
+                <input type="password" id="newPassword" class="w-full border border-gray-300 px-4 py-2 rounded" />
+              </div>
+              
+              <div class="flex justify-end gap-2">
+                <button onclick="closePasswordModal()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancel</button>
+                <button onclick="savePassword()" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Save</button>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    <script src="./dist/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const hamburgerButton = document.getElementById("hamburger");
+          const sidebar = document.getElementById("sidebar");
+      
+          hamburgerButton.addEventListener("click", function () {
+            if (sidebar.style.display === "none" || sidebar.style.display === "") {
+              sidebar.style.display = "block";
+            } else {
+              sidebar.style.display = "none";
+            }
+          });
+        });
+      </script>
+
+      <!-- Pop up edit data -->
+      <script>
+        function openModal(fieldId, buttonElement) {
+          const fieldValue = document.getElementById(fieldId).innerText;
+          const fieldName = buttonElement.getAttribute("data-field");
+      
+          // Set isi input dan label popup
+          document.getElementById("modalTitle").innerText = `Edit ${fieldName}`;
+          document.getElementById("popupInput").value = fieldValue;
+          document.getElementById("popupInput").setAttribute("data-target", fieldId);
+      
+          // Tampilkan modal
+          document.getElementById("popupModal").classList.remove("hidden");
+        }
+      
+        function saveChanges() {
+          const newValue = document.getElementById("popupInput").value;
+          const targetId = document.getElementById("popupInput").getAttribute("data-target");
+      
+          document.getElementById(targetId).innerText = newValue;
+      
+          // Sembunyikan modal
+          document.getElementById("popupModal").classList.add("hidden");
+        }
+      
+        function closeModal() {
+          document.getElementById("popupModal").classList.add("hidden");
+        }
+      </script>
+      
+      <!-- pop up change password -->
+      <script>
+        function openPasswordModal() {
+          document.getElementById("passwordModal").classList.remove("hidden");
+        }
+      
+        function closePasswordModal() {
+          document.getElementById("passwordModal").classList.add("hidden");
+        }
+      
+        function savePassword() {
+          const latest = document.getElementById("latestPassword").value;
+          const newPass = document.getElementById("newPassword").value;
+      
+          // Validasi dasar
+          if (!latest || !newPass) {
+            alert("Please fill in both fields.");
+            return;
+          }
+      
+          // Lakukan aksi penyimpanan ke backend di sini jika perlu
+      
+          alert("Password changed successfully (dummy).");
+          closePasswordModal();
+        }
+      </script>
+      
+
+</body>
+</html>

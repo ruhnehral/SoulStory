@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoulStory</title>
+  <link href="./dist/output.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+</head>
+
+<body class="overflow-hidden font-[Poppins]">
+  <img src="/dist/img/logo_fix.svg" class="w-40 absolute top-5 left-5" alt="">
+  <button id="hamburger" name="hamburger" type="button" class="scale-75 lg:hidden block absolute right-4 top-5">
+    <span class="hamburger-line transition duration-300 ease-in-out origin-top-left rotate-45;"></span>
+    <span class="hamburger-line transition duration-300 ease-in-out"></span>
+    <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+  </button>
+  <div class="flex flex-no-wrap overflow-x-hidden">
+    <aside style="min-height: 716px" id="sidebar"
+    class="w-64 fixed hidden bg-white shadow h-full sm:flex flex-col justify-between z-40">
+      <div class="px-8 flex flex-col h-full justify-between">
+        <!-- Bagian Atas -->
+        <div>
+          <div class="h-16 w-full flex items-center mt-9">
+            <img src="./dist/img/logo_fix.svg" class="w-[156px]" alt="Logo">
+          </div>
+    
+          <!-- Pilihan Fitur -->
+          <ul class="mt-14">
+            <p class="font-semibold mb-5 uppercase tracking-widest text-xs text-gray-400">Features</p>
+            <a href="./input_mood.html"
+              class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+              <i data-feather="bar-chart" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+              <span class="text-sm ml-2">Mood Tracker</span>
+            </a>
+            <a href="./forum.html"
+              class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+              <i data-feather="message-circle" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+              <span class="text-sm ml-2">Forums</span>
+            </a>
+          </ul>
+        </div>
+    
+        <!-- Bagian Bawah (Pengaturan) -->
+        <div>
+          <p class="font-semibold mb-5 mt-7 uppercase tracking-widest text-xs text-gray-400">HELP</p>
+          <a href="javascript:void(0)"
+            class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+            <i data-feather="settings" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+            <span class="text-sm ml-2">Settings</span>
+          </a>
+          <a href="./index.html" target="_blank"
+            class="group flex w-full text-black hover:text-white cursor-pointer mb-3 hover:bg-primary px-7 py-3 pl-3 transition ease-in-out items-center rounded-lg">
+            <i data-feather="log-out" class="mr-1 w-4 h-4 text-primary group-hover:text-white"></i>
+            <span class="text-sm ml-2">Log out</span>
+          </a>
+        </div>
+    
+      </div>
+    </aside>
+  
+    <div class="container justify-center mx-auto py-0 lg:ml-64 px-6 overflow-x-hidden">
+      <div class="w-full self-center justify-center rounded overflow-x-hidden">
+        <section id="tanyaAI" class="pt-32 pb-20 overflow-x-hidden">
+          <div class="container mx-auto self-center">
+            <div class="lg:flex block self-center">
+              <div class="justify-center flex mb-5">
+                <img src="./dist/img/her.png" class="lg:w-12 lg:h-12 w-24 h-24 border-2 border-primary rounded-full self-center" alt="">
+              </div>
+              <h1 class="ml-3 text-3xl self-center justify-center mb-3 text-center lg:text-start font-normal">
+                Hello!, <span class="text-primary font-semibold">Ruhnehral.</span>
+              </h1>
+            </div>
+            <div class="block lg:inline-flex w-full">
+              <p class="lg:text-start text-center mt-2">
+                What's your <span class="text-primary font-bold">problem?</span>
+              </p>
+              <i data-feather="help-circle" class="lg:ms-auto lg:block hidden text-primary mt-1"></i>
+            </div>
+            <div class="mt-10">
+              <textarea type="text" placeholder="Tell us your problem here..." dir="ltr"
+                class="drop-shadow-md border-primary border focus:outline-none  p-3 pb-32  w-full rounded-lg">
+                  </textarea>
+              <div class="w-full flex">
+                <button type="button" id="btnSend"
+                  class="px-6 bg-primary py-2 rounded-xl text-white mt-4 mx-auto inline-flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-send-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
+                  </svg>
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script src="./dist/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    feather.replace();
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburgerButton = document.getElementById("hamburger");
+      const sidebar = document.getElementById("sidebar");
+  
+      hamburgerButton.addEventListener("click", function () {
+        if (sidebar.style.display === "none" || sidebar.style.display === "") {
+          sidebar.style.display = "block";
+        } else {
+          sidebar.style.display = "none";
+        }
+      });
+    });
+  </script>
+  
+  <script>
+    document.getElementById("btnSend").addEventListener("click", function () {
+      Swal.fire({
+        html: "Processing data...",
+        timer: 3000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+      }).then((result) => {
+        Swal.fire({
+          title: "Success!",
+          html: "Sebentar lagi anda akan diarahkan hasil diagnosa anda.",
+          icon: "success",
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 5000,
+        }).then((result) => {
+          window.location.href = "./profil.html";
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
